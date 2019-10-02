@@ -1,0 +1,32 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^8.1.0",
+    "ejs": "~2.5.7",
+    "express": "^4.17.1",
+    "http-errors": "^1.7.3",
+    "jsonwebtoken": "^8.2.1",
+    "locks": "^0.2.2",
+    "mocha": "^5.1.1",
+    "mongodb-autoincrement": "^1.0.1",
+    "mongoose": "^5.7.3",
+    "mongoose-autopopulate": "^0.9.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.3",
+    "password-hash": "^1.2.2",
+    "path": "^0.12.7",
+    "yup": "^0.27.0"
+  }
+}

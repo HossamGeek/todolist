@@ -1,0 +1,32 @@
+<div class="alert alert-danger col-4 offset-4 "style="margin-top:30px;" *ngIf="errdb">{{errmsg}}</div>
+
+<h1 class="text-center" style="margin-top: 50px"> Hello {{f_name}} {{l_name}} , To Do List 
+  <div class="btn btn-danger" [routerLink]="['/home']" >logout</div>
+</h1>
+
+<div class="col-8 offset-2">
+    <table class="table ">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <th scope="row">0</th>
+                <td><input type="text" class="form-control" [(ngModel)]='name'></td>
+                <td><div class="btn btn-primary" (click)="addToDo()">Add</div></td>
+              </tr>
+
+          <tr *ngFor="let todo of  all_to_do;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{todo.name}}</td>
+            <td><div class="btn btn-success" (click)="delete(todo._id)">Done</div></td>
+          </tr>
+         
+        </tbody>
+      </table>
+</div>

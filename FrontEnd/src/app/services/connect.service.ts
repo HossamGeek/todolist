@@ -40,6 +40,11 @@ export class ConnectService {
     this.headers.set("list_id",list_id)
     return this.http.delete(this.url + '/todo', this.options).pipe(map(res => res.json()));
   }
- 
+  editToDo(user_id,list_id,data) {
+    
+    this.headers.set("list_id",list_id)
+    this.headers.set("user_id",user_id)
+    return this.http.put(this.url + '/todo', data,this.options).pipe(map(res => res.json()));
+  }
   
 }

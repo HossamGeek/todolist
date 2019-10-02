@@ -7,9 +7,9 @@ const todo = new Schema({
                             action          :   {type:Boolean,default:false},
                             creation_date   :   { type: Date, default: Date.now }
                          }],   
-    user_id            :   {type: Schema.ObjectId,autopopulate: true},
+    user_id            :   {type: Schema.ObjectId,ref:"user",autopopulate: true},
     
-});
+},{collection:"todo"});
 
 todo.plugin(require('mongoose-autopopulate'));
 const todoModel =mongoose.model("todo",todo);

@@ -1,0 +1,31 @@
+.card{
+   padding: 15px;padding-right: 0;border-radius: 10px
+}
+.font-fun{
+    font-family: 'Mansalva', cursive;
+}
+.addToDo{
+    position: absolute;
+    right: 18%;
+}
+.to-do{
+    background-color: cornsilk;
+    position: relative;
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+
+.to-do .delete {
+    position: absolute;
+    right: 2%;
+    top: 25%;
+    cursor: pointer;
+    
+}
+
+.to-do .edit {
+    
+    cursor: pointer;
+    
+}

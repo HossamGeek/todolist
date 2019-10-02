@@ -8,7 +8,7 @@ const user = new Schema({
     email           :   {type:String,unique:true},
     phone           :   String,
     sign_in_date    :   { type: Date, default: Date.now }
-});
+},{collection:"user"});
 
 const userModel =mongoose.model("user",user);
 module.exports = userModel;

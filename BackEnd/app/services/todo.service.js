@@ -10,19 +10,21 @@ module.exports = {
     pushInList(where, field, updates, opt = {}) {
         return Todo.updateOne(
           where,
-          { $push: { [field] : updates }},
+          { $push: { [field] : { $each:updates} }},
           opt
         );
     },
-    findinlist:(where,filter={})=>{
-        return Todo.find(where,{ list: 
-            { $elemMatch : 
-                filter
-            } 
-        })
+    findUserlist:(user_id,filter={})=>{
+         return Todo.find({user_id,
+            'list': {$elemMatch:filter}}
+            
+        )
+         //.select(  { list: { $elemMatch: {action:true} } })
     },
-    updateInList(filter, updates={}, opt = {}) {
-        return Todo.updateOne({  list: 
+    updateUserList(user_id,filter, updates={}, opt = {}) {
+        return Todo.updateOne({  
+            user_id,
+            list: 
             { $elemMatch : 
                 filter
             } 

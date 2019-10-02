@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import { ToastrModule } from 'ng6-toastr-notifications';
 /*Form*/
 import {FormsModule} from '@angular/forms';
 
 /*service*/
 import {ConnectService} from './services/connect.service';
 import {HttpModule} from '@angular/http';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 /*Routeing*/
@@ -39,6 +41,7 @@ const approutes: Routes = [
     LoginComponent,
     HomeComponent,
     RegisterComponent,
+    
     TodolistComponent,
     
   ],
@@ -46,7 +49,9 @@ const approutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(approutes),
+    ToastrModule.forRoot() 
   ],
   providers: [ConnectService],
   bootstrap: [AppComponent]
